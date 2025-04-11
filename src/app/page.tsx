@@ -1,26 +1,31 @@
-"use client";
+// "use client";
 import Head from "next/head";
-import { useEffect } from "react";
+// import { useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
-  useEffect(() => {
-    const agreeBtn = document.querySelector(".bg-green-500");
-    const rescheduleBtn = document.querySelector(".bg-gray-200");
+  // useEffect(() => {
+  //   const agreeBtn = document.querySelector(".bg-green-500");
+  //   const rescheduleBtn = document.querySelector(".bg-gray-200");
 
-    agreeBtn?.addEventListener("click", () => {
-      alert("Cảm ơn Hoan đã đồng ý! Duy sẽ liên hệ với Hoan sớm nhé!");
-    });
+  //   agreeBtn?.addEventListener("click", () => {
+  //     alert("Cảm ơn Hoan đã đồng ý! Duy sẽ liên hệ với Hoan sớm nhé!");
+  //   });
 
-    rescheduleBtn?.addEventListener("click", () => {
-      alert(
-        "Không sao đâu! Hãy nhắn tin cho Duy để sắp xếp lại lịch trình nhé!"
-      );
-    });
-  }, []);
+  //   rescheduleBtn?.addEventListener("click", () => {
+  //     alert(
+  //       "Không sao đâu! Hãy nhắn tin cho Duy để sắp xếp lại lịch trình nhé!"
+  //     );
+  //   });
+  // }, []);
   return (
     <>
       <Head>
-        <title>Lời mời foodtour Sài Gòn</title>
+        <title>Foodtour Sài Gòn | Hồ Quốc Duy</title>
+        <meta
+          name="description"
+          content="Lời mời tham gia chuyến foodtour Sài Gòn cùng Duy cuối tuần này. Cùng nhau khám phá những món ăn ngon và tạo nên kỷ niệm đáng nhớ."
+        />
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
           rel="stylesheet"
@@ -31,123 +36,102 @@ export default function Home() {
         />
       </Head>
 
-      <div className="min-h-screen flex flex-col font-montserrat bg-[#fef9f8]">
-        <header className="bg-gradient-to-r from-red-400 to-pink-500 py-6 text-white shadow-lg">
-          <div className="container mx-auto px-4 flex justify-between items-center">
-            <h1 className="text-3xl font-bold font-dancing">
-              Foodtour Sài Gòn
-            </h1>
-            <div className="hidden md:block">
-              <i className="fas fa-utensils text-xl mr-3"></i>
-              <i className="fas fa-ice-cream text-xl mr-3"></i>
-              <i className="fas fa-microphone text-xl"></i>
+      <div className="min-h-screen flex flex-col font-montserrat bg-[#fff9ed] ">
+        <main className="mx-auto pt-10 w-full max-w-5xl ">
+          {/* Header */}
+          <div className="flex items-center justify-between px-4 text-[#808080]">
+            <div className="flex gap-20 items-center italic font-semibold">
+              <div>Porfolio</div>
+              <div>Services</div>
+            </div>
+            <Image
+              src="/images/head-cat.png"
+              alt="Cat"
+              width={80}
+              height={80}
+            />
+            <div className="flex gap-20 items-center italic font-semibold">
+              <div>Contact</div>
+              <div>About</div>
             </div>
           </div>
-        </header>
 
-        <main className="flex-grow container mx-auto px-4 py-8">
-          <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="relative h-64 overflow-hidden">
-              <img
-                src="/api/placeholder/1200/400"
-                alt="Sài Gòn đẹp"
-                className="w-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                <div className="p-6 text-white">
-                  <h2 className="text-3xl font-bold font-dancing">Chào Hoan</h2>
-                  <p className="mt-2">
-                    Cùng khám phá ẩm thực Sài Gòn cuối tuần này nhé!
-                  </p>
-                </div>
-              </div>
+          {/* Main content */}
+          <div className="flex flex-col items-center justify-between px-4 py-24 text-center">
+            <h1 className="font-semibold text-6xl text-[#787878] antialiased italic">
+              Chào Hoan
+            </h1>
+            <p className="mt-8 text-[#787878] text-2xl font-semibold max-w-2xl leading-9">
+              " Nhân dịp cuối tuần này trời đẹp trong xanh, gió mát, Duy muốn rủ
+              Hoan đi dạo quanh Sài Gòn làm chuyến foodtour thiệt chill."
+            </p>
+            <div className="mt-14 flex gap-4 text-xl font-semibold italic">
+              <button className="py-4 px-12 bg-[#fc9b9b] text-center rounded-2xl text-2xl cursor-pointer hover:bg-[#fc9b9b]/80 text-white">
+                Hire Us
+              </button>
+              <button className="py-4 px-12 border-2 border-[#fc9b9b] text-[#fc9b9b] rounded-2xl text-center text-2xl cursor-pointer hover:bg-[#ff7f4e]/10">
+                Our Work
+              </button>
             </div>
+          </div>
+          {/* Lịch trình */}
+          <h2 className="mt-12 text-5xl font-bold text-[#fc9b9b] mb-6 text-center">
+            Lịch trình dự kiến
+          </h2>
+          <div className="mt-8 flex flex-col items-center justify-center px-4 py-12 text-start  rounded-lg ">
+            <ul className="border-l-2 border-[#fc9b9b] pl-5 mb-6">
+              {[
+                { time: "17:30", text: "Duy qua rước Hoan" },
+                { time: "18:00", text: "Ăn tối tại quán MamaThai" },
+                {
+                  time: "19:30",
+                  text: "Trà sữa hoặc tô tượng tại Nhà sách Hải An / U-Tea Trần Đình Xu",
+                },
+                { time: "21:00 ~ 22:00", text: "Đưa Hoan về nhà an toàn" },
+              ].map((item, idx) => (
+                <li key={idx} className="mb-4 relative pl-2 text-xl">
+                  <div className="absolute left-[-29px] top-[6px] w-4 h-4 rounded-full bg-[#fc9b9b]"></div>
+                  <span className="font-bold text-[#fc9b9b]">{item.time}</span>
+                  <p className="text-black">{item.text}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-10 text-[#787878] italic text-lg">
+              (Lịch trình có thể linh hoạt đổi nếu có gì phát sinh nghen, Duy
+              không cứng nhắc đâu 😌)
+            </p>
+          </div>
 
-            <div className="p-6">
-              <div className="mb-8">
-                <p className="text-gray-700 leading-relaxed">
-                  Mình là Hồ Quốc Duy đây. Sau những ngày nằm ề ra lướt TikTok,
-                  Duy nhận ra Sài Gòn mình có quá chừng món ngon nhưng mà ăn một
-                  mình thì buồn lắm. Nhân dịp cuối tuần này trời đẹp trong xanh,
-                  gió mát, Duy muốn rủ Hoan đi dạo quanh Sài Gòn làm chuyến
-                  foodtour thiệt chill.
-                </p>
-              </div>
+          {/* Phản hồi */}
 
-              <div className="mb-8">
-                <h3 className="text-xl font-semibold mb-4 text-pink-600">
-                  <i className="fas fa-map-marked-alt mr-2"></i>Lịch trình dự
-                  kiến:
-                </h3>
-                <div className="border-l-2 border-pink-400 pl-5 relative">
-                  {[
-                    {
-                      time: "17:30",
-                      text: "Duy qua rước Hoan",
-                    },
-                    {
-                      time: "18:00",
-                      text: "Món ăn Hàn Quốc",
-                    },
-                    {
-                      time: "19:30",
-                      text: "Bingsu hoặc kem",
-                    },
-                    {
-                      time: "20:00",
-                      text: "Karaoke",
-                    },
-                    {
-                      time: "22:00",
-                      text: "Đưa Hoan về nhà an toàn",
-                    },
-                  ].map((item, idx) => (
-                    <div key={idx} className="relative mb-6 pl-2">
-                      <div className="absolute left-[-29px] top-[6px] w-4 h-4 rounded-full bg-pink-400"></div>
-                      <span className="font-bold text-pink-500">
-                        {item.time}
-                      </span>
-                      <p className="text-black">{item.text}</p>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-sm text-gray-600 italic mt-4">
-                  Lịch trình có thể linh hoạt đổi nếu có gì phát sinh nghen, Duy
-                  không cứng nhắc đâu.
-                </p>
-              </div>
-
-              <div className="mb-8 bg-pink-50 p-4 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4 text-pink-600 flex items-center">
-                  <i className="fas fa-reply mr-2"></i>Phản hồi
-                </h3>
-                <p className="text-gray-700">
-                  Nếu Hoan thấy okie với kế hoạch trên, đừng quên phản hồi lại
-                  cho Duy biết nha.
-                </p>
-                <div className="mt-6 flex space-x-4 justify-center">
-                  <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full transition duration-300 shadow-md">
-                    <i className="fas fa-check mr-2"></i>Đồng ý
-                  </button>
-                  <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-full transition duration-300 shadow-md">
-                    <i className="fas fa-calendar-alt mr-2"></i>Đổi ngày
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-red-400 to-pink-500 p-6 text-white text-center">
-              <p className="font-dancing text-xl">
-                Chúc Hoan một ngày ngọt ngào như lớp kem macchiato trên ly trà
-                sữa olong
-              </p>
-              <p className="mt-2">Thân, Duy nè</p>
-              <div className="mt-4 animate-bounce">
-                <i className="fas fa-heart text-2xl text-white"></i>
-              </div>
+          <h2 className="mt-12 text-4xl font-bold text-[#fc9b9b] mb-6 text-center">
+            Phản hồi nè
+          </h2>
+          <div className="mt-8 flex flex-col items-center justify-center px-4 py-12 text-start bg-[#fff4e6] rounded-lg shadow-md max-w-4xl mx-auto">
+            <p className="text-[#787878]  mb-4 text-xl max-w-2xl text-center">
+              Nếu Hoan thấy okie với kế hoạch trên, đừng quên phản hồi lại cho
+              Duy biết nha 💌
+            </p>
+            <div className="flex space-x-4 justify-center mt-2">
+              <button className="py-2 px-5 bg-green-500 text-center rounded-2xl text-base cursor-pointer hover:bg-green-400 text-white">
+                Đồng ý
+              </button>
+              {/* <button className="py-2 px-5 bg-gray-500 text-center rounded-2xl text-base cursor-pointer hover:bg-green-600 text-white">
+                Đổi ngày
+              </button> */}
+              {/* <button className="py-2 px-5 border-2 border-gray-500 text-green-500 rounded-2xl text-center text-base cursor-pointer hover:bg-green-100">
+                Đổi ngày
+              </button> */}
             </div>
           </div>
         </main>
+        <div className="mt-14 flex items-center justify-center px-4  text-center">
+          {/* <Image src="/images/cat.png" alt="Cat" width={80} height={80} />
+            // <Image src="/images/cat.png" alt="Cat" width={80} height={80} /> */}
+          <Image src="/images/cats.png" alt="Cat" width={400} height={500} />
+          {/* <Image src="/images/cat.png" alt="Cat" width={80} height={80} />
+            <Image src="/images/cat.png" alt="Cat" width={80} height={80} /> */}
+        </div>
       </div>
     </>
   );

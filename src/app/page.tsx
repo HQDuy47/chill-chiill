@@ -62,8 +62,8 @@ export default function Home() {
               Chào Hoan
             </h1>
             <p className="mt-8 text-[#787878] text-2xl font-semibold max-w-2xl leading-9">
-              " Nhân dịp cuối tuần này trời đẹp trong xanh, gió mát, Duy muốn rủ
-              Hoan đi dạo quanh Sài Gòn làm chuyến foodtour thiệt chill."
+              Nhân dịp cuối tuần này trời đẹp trong xanh, gió mát, Duy muốn rủ
+              Hoan đi dạo quanh Sài Gòn làm chuyến foodtour thiệt chill.
             </p>
             <div className="mt-14 flex gap-4 text-xl font-semibold italic">
               <button className="py-4 px-12 bg-[#fc9b9b] text-center rounded-2xl text-2xl cursor-pointer hover:bg-[#fc9b9b]/80 text-white">
@@ -128,7 +128,7 @@ export default function Home() {
         <div className="mt-14 flex items-center justify-center px-4  text-center">
           {/* <Image src="/images/cat.png" alt="Cat" width={80} height={80} />
             // <Image src="/images/cat.png" alt="Cat" width={80} height={80} /> */}
-          <Image src="/images/cats.png" alt="Cat" width={400} height={500} />
+          {/* <Image src="/images/cats.png" alt="Cat" width={400} height={500} /> */}
           {/* <Image src="/images/cat.png" alt="Cat" width={80} height={80} />
             <Image src="/images/cat.png" alt="Cat" width={80} height={80} /> */}
         </div>
